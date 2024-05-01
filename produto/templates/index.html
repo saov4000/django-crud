@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Listagem</h1>
+    <hr>
+    <a href="cad">Cadastrar</a>
+    <hr>
+    <ul>
+        {% for produto in produtos%}
+            <li>
+                {{produto.descricao}} 
+                <a href="{% url 'detalhe' produto.id %}">Detalhe</a> 
+                <a href="{% url 'atu' produto.id %}">Atualizar</a>
+                <a href="{% url 'delete' produto.id %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>  
+</body>
+</html>
